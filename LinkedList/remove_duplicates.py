@@ -34,8 +34,7 @@ class LinkedList:
         return nodes
 
 
-def removeDuplicatesFromLinkedList(linkedList):
-    
+def remove_duplicates(linkedList):
     current_node = linkedList    
     while current_node:
         next_node = current_node.next
@@ -43,7 +42,6 @@ def removeDuplicatesFromLinkedList(linkedList):
             next_node = next_node.next
         current_node.next = next_node
         current_node = next_node
-
     return linkedList
 
 
@@ -51,6 +49,6 @@ class TestProgram(unittest.TestCase):
     def test_case_1(self):
         test = LinkedList(1).addMany([1, 3, 4, 4, 4, 5, 6, 6])
         expected = LinkedList(1).addMany([3, 4, 5, 6])
-        actual = removeDuplicatesFromLinkedList(test)
+        actual = remove_duplicates(test)
         self.assertEqual(actual.getNodesInArray(), expected.getNodesInArray())
 
